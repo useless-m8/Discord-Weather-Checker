@@ -10,13 +10,13 @@ om  = openmeteo_requests.Client()
 def get_weather(location):
     output = {'temperature': 0, 'apparent_temperature': 0, 'is_day': 0, 'rain': 0, 'showers': 0, 'cloud_cover': 0, 'weather_code': 0, 'city': '', 'country': ''}
 
-    response = requests.get(f'https://api.tomtom.com/search/2/geocode/{location}.json?key=')
-    response = response.json()
+    response = requests.get(f'https://api.tomtom.com/search/2/geocode/{location}.json?key={API-key}') #API key from TomTom goes here.
+    response = response.json() #getting reverse geocoded data (longitude and latitude), since open-meteo API only takes lon and lat parameters, and not city names
 
     if response['results'][0]['entityType'] == 'Country': #if entityType is 'country' then the response (most likely) is just gibberish, so we handle it as 'No data found'.
         return {}
 
-    output['city'] = response['results'][0]['address']['municipality']
+    output['city'] = response['results'][0]['address']['municipality'] #needed for further output string
     output['country'] = response['results'][0]['address']['country']
 
     latitude = response['results'][0]['position']['lat']
