@@ -8,7 +8,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_message(message):
     if message.content.startswith('!weather'):
-        if len(message.content.split(' ')) == 1:
+        if len(message.content.split(' ')) == 1: #if no city given, ask the user to give the prompt again
             await message.channel.send('Please specify city')
             return
         
@@ -28,4 +28,4 @@ async def on_message(message):
         await message.channel.send(output_string)
 
 
-client.run('')
+client.run('') #bot token goes here (you must take it from discord dev portal)
