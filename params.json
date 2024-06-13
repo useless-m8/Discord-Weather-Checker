@@ -1,0 +1,5 @@
+{
+    "latitude": 0,
+    "longitude": 0,
+    "current": ["temperature_2m", "relative_humidity_2m", "apparent_temperature", "is_day", "rain", "showers", "weather_code", "cloud_cover"]
+}
