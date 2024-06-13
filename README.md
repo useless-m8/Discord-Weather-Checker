@@ -4,7 +4,7 @@ If successful, the bot gives out current temperature, area covered by rain or sh
 <h1></h1>
 <h3>Commands</h3>
 <p>!weather [ city, village; country(optional for better result) ] </p>
-If not city of the given name was found, the bot will give out: "No data found".
+If no city of the given name was found, the bot will give out: "No data found".
 <h3>E.g. of a successful response by bot:</h3>
 <img src = "./image.png" alt = "example image">
 <h1></h1>
